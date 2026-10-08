@@ -15,7 +15,7 @@ require_once __DIR__ . '/includes/header.php';
     <section class="section">
       <div class="container split">
         <figure class="media-frame reveal">
-          <img src="/assets/model-campaign.jpg" alt="Kyravia brand campaign" width="900" height="1125">
+          <img src="/assets/model-holding-emerald-luxury.jpg" alt="Kyravia luxury brand campaign" width="900" height="1125">
         </figure>
         <div class="reveal">
           <p class="eyebrow">Our approach</p>

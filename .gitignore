@@ -1,3 +1,7 @@
 /data/*.json
 .DS_Store
 Thumbs.db
+/assets/pack/
+/assets/seo-pack/
+/assets/web-assets-fresh/
+

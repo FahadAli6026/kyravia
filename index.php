@@ -4,28 +4,89 @@ require_once __DIR__ . '/includes/header.php';
 ?>
 
   <main>
-    <section class="hero-banner" aria-label="Kyravia best herbal shampoo Pakistan banner">
-      <img src="/assets/banner-silky-strong.jpg" alt="Kyravia best herbal shampoo in Pakistan — Silky Strong Unstoppable" width="1920" height="900" fetchpriority="high">
-      <div class="hero-banner-cta">
+    <?php
+    $slides = [
+        [
+            'src' => '/assets/slider/slide-1-silky.jpg',
+            'alt' => 'Kyravia herbal shampoo — Silky. Strong. Unstoppable.',
+            'label' => 'Silky. Strong. Unstoppable.',
+        ],
+        [
+            'src' => '/assets/slider/slide-2-duo.jpg',
+            'alt' => 'Kyravia campaign models with premium herbal shampoo bottles',
+            'label' => 'Pakistan ke baalon ki pehchaan',
+        ],
+        [
+            'src' => '/assets/slider/slide-3-gold.jpg',
+            'alt' => 'Model holding Kyravia herbal shampoo with gold bokeh',
+            'label' => 'Premium herbal care',
+        ],
+        [
+            'src' => '/assets/slider/slide-4-product.jpg',
+            'alt' => 'Kyravia Premium Herbal Shampoo 400ml bottle',
+            'label' => '400 ml · Rs 1,890',
+        ],
+        [
+            'src' => '/assets/slider/slide-5-emerald.jpg',
+            'alt' => 'Luxury lifestyle with Kyravia shampoo bottle',
+            'label' => 'Luxury daily restore',
+        ],
+        [
+            'src' => '/assets/slider/slide-6-flip.jpg',
+            'alt' => 'Happy model with hair flip holding Kyravia shampoo',
+            'label' => 'Soft. Light. Ready.',
+        ],
+        [
+            'src' => '/assets/slider/slide-7-offer.jpg',
+            'alt' => 'Kyravia launch offer banner',
+            'label' => 'Order online · COD',
+        ],
+    ];
+    ?>
+    <section class="hero-slider" aria-label="Kyravia banner slider" data-slider>
+      <div class="hero-slider-track">
+        <?php foreach ($slides as $i => $slide): ?>
+          <div class="hero-slide<?= $i === 0 ? ' is-active' : '' ?>" data-slide="<?= $i ?>">
+            <img
+              src="<?= e($slide['src']) ?>"
+              alt="<?= e($slide['alt']) ?>"
+              width="1920"
+              height="1080"
+              <?= $i === 0 ? 'fetchpriority="high"' : 'loading="lazy"' ?>
+            >
+          </div>
+        <?php endforeach; ?>
+      </div>
+      <div class="hero-slider-veil" aria-hidden="true"></div>
+      <div class="hero-slider-content">
         <div class="container">
-          <p><?= e(SITE_TAGLINE) ?></p>
+          <h1>Kyravia Premium Herbal Shampoo</h1>
+          <p class="hero-tagline"><?= e(SITE_TAGLINE) ?></p>
+          <p class="hero-slide-label" data-slide-label><?= e($slides[0]['label']) ?></p>
           <div class="cta-row">
             <a class="btn btn-primary" href="/shop">Shop now</a>
             <a class="btn btn-ghost" href="/product">View product</a>
           </div>
         </div>
       </div>
+      <button class="slider-btn slider-prev" type="button" aria-label="Previous slide">‹</button>
+      <button class="slider-btn slider-next" type="button" aria-label="Next slide">›</button>
+      <div class="slider-dots" role="tablist" aria-label="Slider pagination">
+        <?php foreach ($slides as $i => $slide): ?>
+          <button type="button" class="slider-dot<?= $i === 0 ? ' is-active' : '' ?>" data-goto="<?= $i ?>" aria-label="Go to slide <?= $i + 1 ?>"></button>
+        <?php endforeach; ?>
+      </div>
     </section>
 
     <section class="section">
       <div class="container split">
         <figure class="media-frame reveal">
-          <img src="/assets/hero-product.jpg" alt="Kyravia Premium Herbal Shampoo 400ml — best shampoo bottle Pakistan" width="900" height="1125" loading="lazy">
+          <img src="/assets/hero-product.jpg" alt="Kyravia herbal shampoo 400ml bottle with gold pump" width="900" height="1125" loading="lazy">
         </figure>
         <div class="reveal">
-          <p class="eyebrow">Best herbal shampoo Pakistan</p>
-          <h1 class="section-title">Kyravia — premium herbal shampoo made for Pakistan</h1>
-          <p class="section-lead">Looking for the best shampoo in Pakistan for everyday silk and strength? Kyravia is a single hero formula — clean rinse, soft finish, no product clutter.</p>
+          <p class="eyebrow">Herbal shampoo Pakistan</p>
+          <h2 class="section-title">Premium herbal shampoo made for Pakistan</h2>
+          <p class="section-lead">Looking for a premium shampoo in Pakistan for everyday silk and strength? Kyravia is a single hero formula — clean rinse, soft finish, no product clutter.</p>
           <div class="price-line">
             <span class="price-now"><?= e(format_price(PRODUCT_PRICE)) ?></span>
             <span class="price-note"><?= e(PRODUCT_SIZE) ?> · Cash on delivery</span>

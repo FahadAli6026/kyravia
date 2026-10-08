@@ -45,4 +45,64 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     reveals.forEach(show);
   }
+
+  const slider = document.querySelector("[data-slider]");
+  if (slider) {
+    const slides = Array.from(slider.querySelectorAll(".hero-slide"));
+    const dots = Array.from(slider.querySelectorAll(".slider-dot"));
+    const label = slider.querySelector("[data-slide-label]");
+    const labels = slides.map((_, i) => {
+      const map = [
+        "Silky. Strong. Unstoppable.",
+        "Pakistan ke baalon ki pehchaan",
+        "Premium herbal care",
+        "400 ml · Rs 1,890",
+        "Luxury daily restore",
+        "Soft. Light. Ready.",
+        "Order online · COD",
+      ];
+      return map[i] || "";
+    });
+    let index = 0;
+    let timer;
+
+    const goTo = (next) => {
+      slides[index]?.classList.remove("is-active");
+      dots[index]?.classList.remove("is-active");
+      index = (next + slides.length) % slides.length;
+      slides[index]?.classList.add("is-active");
+      dots[index]?.classList.add("is-active");
+      if (label) {
+        label.style.opacity = "0";
+        window.setTimeout(() => {
+          label.textContent = labels[index] || "";
+          label.style.opacity = "1";
+        }, 180);
+      }
+    };
+
+    const play = () => {
+      window.clearInterval(timer);
+      timer = window.setInterval(() => goTo(index + 1), 5500);
+    };
+
+    slider.querySelector(".slider-prev")?.addEventListener("click", () => {
+      goTo(index - 1);
+      play();
+    });
+    slider.querySelector(".slider-next")?.addEventListener("click", () => {
+      goTo(index + 1);
+      play();
+    });
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        goTo(Number(dot.dataset.goto || 0));
+        play();
+      });
+    });
+
+    slider.addEventListener("mouseenter", () => window.clearInterval(timer));
+    slider.addEventListener("mouseleave", play);
+    play();
+  }
 });
