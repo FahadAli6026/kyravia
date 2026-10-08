@@ -92,7 +92,7 @@ $productSchema = [
   <link rel="apple-touch-icon" href="/assets/favicon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/css/styles.css?v=fb7">
+  <link rel="stylesheet" href="/css/styles.css?v=fblogo8">
 
   <script type="application/ld+json"><?= json_encode($graphSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
   <?php if ($current === '' || $current === 'product' || $current === 'shop'): ?>

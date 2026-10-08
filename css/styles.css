@@ -697,27 +697,32 @@ textarea {
 }
 
 .footer-social {
-  margin-top: 1.1rem;
+  margin-top: 1.15rem;
+  display: flex;
+  gap: 0.65rem;
 }
 
-.social-link {
+.social-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.55rem 1rem;
+  width: 42px;
+  height: 42px;
   border: 1px solid var(--line);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  border-radius: 50%;
   color: var(--gold-bright);
-  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
-.social-link:hover {
-  background: var(--gold);
-  border-color: var(--gold);
-  color: var(--black);
+.social-icon svg {
+  display: block;
+}
+
+.social-icon:hover {
+  background: #1877f2;
+  border-color: #1877f2;
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 .site-footer h3 {
