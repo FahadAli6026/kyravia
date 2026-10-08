@@ -60,12 +60,14 @@ require_once __DIR__ . '/includes/header.php';
       <div class="hero-slider-veil" aria-hidden="true"></div>
       <div class="hero-slider-content">
         <div class="container">
-          <h1>Kyravia Premium Herbal Shampoo</h1>
-          <p class="hero-tagline"><?= e(SITE_TAGLINE) ?></p>
-          <p class="hero-slide-label" data-slide-label><?= e($slides[0]['label']) ?></p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="/shop">Shop now</a>
-            <a class="btn btn-ghost" href="/product">View product</a>
+          <div class="hero-slider-copy">
+            <h1>Kyravia Premium Herbal Shampoo</h1>
+            <p class="hero-tagline"><?= e(SITE_TAGLINE) ?></p>
+            <p class="hero-slide-label" data-slide-label><?= e($slides[0]['label']) ?></p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="/shop">Shop now</a>
+              <a class="btn btn-ghost" href="/product">View product</a>
+            </div>
           </div>
         </div>
       </div>

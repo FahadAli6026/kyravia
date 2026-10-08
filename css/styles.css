@@ -246,7 +246,8 @@ textarea {
   inset: 0;
   z-index: 2;
   background:
-    linear-gradient(180deg, rgba(11, 11, 11, 0.2) 0%, transparent 35%, rgba(11, 11, 11, 0.78) 100%);
+    linear-gradient(250deg, rgba(11, 11, 11, 0.78) 0%, rgba(11, 11, 11, 0.25) 42%, transparent 62%),
+    linear-gradient(180deg, rgba(11, 11, 11, 0.15) 0%, transparent 40%, rgba(11, 11, 11, 0.72) 100%);
   pointer-events: none;
 }
 
@@ -258,14 +259,30 @@ textarea {
   pointer-events: none;
 }
 
-.hero-slider-content .container,
-.hero-slider-content .cta-row,
+.hero-slider-content .container {
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.hero-slider-copy {
+  width: min(100%, 34rem);
+  text-align: right;
+  margin-left: auto;
+  pointer-events: auto;
+}
+
+.hero-slider-content .cta-row {
+  justify-content: flex-end;
+}
+
 .hero-slider-content .btn {
   pointer-events: auto;
 }
 
 .hero-slider-content h1 {
   margin: 0 0 0.55rem;
+  margin-left: auto;
   max-width: 14ch;
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 6vw, 4.2rem);
@@ -276,6 +293,7 @@ textarea {
 
 .hero-tagline {
   margin: 0 0 0.45rem;
+  margin-left: auto;
   color: var(--champagne);
   font-family: var(--font-display);
   font-size: clamp(1.2rem, 2.4vw, 1.7rem);
@@ -284,6 +302,7 @@ textarea {
 
 .hero-slide-label {
   margin: 0 0 1.5rem;
+  margin-left: auto;
   color: var(--gold-bright);
   font-size: 0.78rem;
   font-weight: 600;
@@ -845,5 +864,10 @@ textarea {
 
   .hero-slider-content {
     padding-bottom: 3.75rem;
+  }
+
+  .hero-slider-copy {
+    text-align: right;
+    width: 100%;
   }
 }
