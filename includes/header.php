@@ -61,7 +61,7 @@ $productSchema = [
 <html lang="en-PK">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title><?= e($pageTitle) ?></title>
   <meta name="description" content="<?= e($pageDescription) ?>">
   <meta name="keywords" content="<?= e($pageKeywords) ?>">
@@ -92,7 +92,7 @@ $productSchema = [
   <link rel="apple-touch-icon" href="/assets/favicon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/css/styles.css?v=introband5">
+  <link rel="stylesheet" href="/css/styles.css?v=mobile6">
 
   <script type="application/ld+json"><?= json_encode($graphSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
   <?php if ($current === '' || $current === 'product' || $current === 'shop'): ?>

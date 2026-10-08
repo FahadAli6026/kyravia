@@ -54,6 +54,6 @@
       </p>
     </div>
   </footer>
-  <script src="/js/main.js?v=introband5"></script>
+  <script src="/js/main.js?v=mobile6"></script>
 </body>
 </html>

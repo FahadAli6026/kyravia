@@ -9,14 +9,35 @@ document.addEventListener("DOMContentLoaded", function () {
     nav.classList.toggle("is-scrolled", window.scrollY > 24);
   }
 
+  function closeMenu() {
+    if (!primaryNav || !toggle) return;
+    primaryNav.classList.remove("is-open");
+    toggle.setAttribute("aria-expanded", "false");
+    document.body.classList.remove("nav-open");
+  }
+
+  function openMenu() {
+    if (!primaryNav || !toggle) return;
+    primaryNav.classList.add("is-open");
+    toggle.setAttribute("aria-expanded", "true");
+    document.body.classList.add("nav-open");
+  }
+
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
   if (toggle && primaryNav) {
     toggle.addEventListener("click", function () {
-      var open = primaryNav.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      document.body.classList.toggle("nav-open", open);
+      if (primaryNav.classList.contains("is-open")) closeMenu();
+      else openMenu();
+    });
+
+    primaryNav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeMenu();
     });
   }
 
@@ -104,7 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
     })(i);
   }
 
-  // Touch swipe
   var startX = 0;
   slider.addEventListener(
     "touchstart",
