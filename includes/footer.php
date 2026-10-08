@@ -54,6 +54,6 @@
       </p>
     </div>
   </footer>
-  <script src="/js/main.js?v=slider2"></script>
+  <script src="/js/main.js?v=bannerfit3"></script>
 </body>
 </html>
