@@ -1,6 +1,5 @@
-<?php
+﻿<?php
 declare(strict_types=1);
-$pageTitle = 'How to use — Kyravia';
 require_once __DIR__ . '/includes/header.php';
 ?>
 
@@ -16,7 +15,7 @@ require_once __DIR__ . '/includes/header.php';
     <section class="section">
       <div class="container split">
         <figure class="media-frame reveal">
-          <img src="assets/bathroom-spa.jpg" alt="Using Kyravia in the shower" width="900" height="1125">
+          <img src="/assets/bathroom-spa.jpg" alt="Using Kyravia in the shower" width="900" height="1125">
         </figure>
         <div class="reveal">
           <p class="eyebrow">Routine</p>

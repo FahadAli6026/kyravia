@@ -23,4 +23,12 @@ php -S localhost:8000 router.php
 
 Orders & wholesale forms email **kyraviashampoo@gmail.com** (needs working PHP `mail()` / SMTP on the server).
 
+## SEO
+
+On-page SEO is ready (titles, sitemap, FAQ schema). Google only indexes **public hosted** sites.
+
+1. Host this PHP site on a live domain
+2. Set `SITE_URL` in `includes/config.php` (e.g. `https://yourdomain.com`)
+3. Submit `https://yourdomain.com/sitemap.xml` in [Google Search Console](https://search.google.com/search-console)
+
 Update contact/price in `includes/config.php`.

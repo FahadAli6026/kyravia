@@ -24,6 +24,16 @@ if (str_ends_with($uri, '.php')) {
     return true;
 }
 
+if ($uri === '/sitemap.xml') {
+    require __DIR__ . '/sitemap.php';
+    return true;
+}
+
+if ($uri === '/robots.txt') {
+    require __DIR__ . '/robots.php';
+    return true;
+}
+
 // Map /process/order -> process/order.php
 $phpFile = __DIR__ . $uri . '.php';
 if (is_file($phpFile)) {

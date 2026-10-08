@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-$pageTitle = 'Shop — Order Kyravia';
 require_once __DIR__ . '/includes/header.php';
 
 $orderStatus = $_GET['order'] ?? '';
@@ -19,7 +18,7 @@ $flashMsg = isset($_GET['msg']) ? (string) $_GET['msg'] : '';
     <section class="section">
       <div class="container split">
         <figure class="media-frame reveal">
-          <img src="assets/hero-product.jpg" alt="Order Kyravia Premium Shampoo" width="900" height="1125">
+          <img src="/assets/hero-product.jpg" alt="Order Kyravia Premium Shampoo" width="900" height="1125">
         </figure>
         <div class="shop-panel reveal">
           <p class="eyebrow"><?= e(PRODUCT_NAME) ?></p>

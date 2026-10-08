@@ -1,12 +1,11 @@
 <?php
 declare(strict_types=1);
-$pageTitle = 'Kyravia — Pakistan ke baalon ki pehchaan';
 require_once __DIR__ . '/includes/header.php';
 ?>
 
   <main>
-    <section class="hero-banner" aria-label="Kyravia banner">
-      <img src="assets/banner-silky-strong.jpg" alt="Silky. Strong. Unstoppable. New Kyravia Shampoo" width="1920" height="900" fetchpriority="high">
+    <section class="hero-banner" aria-label="Kyravia best herbal shampoo Pakistan banner">
+      <img src="/assets/banner-silky-strong.jpg" alt="Kyravia best herbal shampoo in Pakistan — Silky Strong Unstoppable" width="1920" height="900" fetchpriority="high">
       <div class="hero-banner-cta">
         <div class="container">
           <p><?= e(SITE_TAGLINE) ?></p>
@@ -21,12 +20,12 @@ require_once __DIR__ . '/includes/header.php';
     <section class="section">
       <div class="container split">
         <figure class="media-frame reveal">
-          <img src="assets/hero-product.jpg" alt="Kyravia Premium Shampoo bottle" width="900" height="1125" loading="lazy">
+          <img src="/assets/hero-product.jpg" alt="Kyravia Premium Herbal Shampoo 400ml — best shampoo bottle Pakistan" width="900" height="1125" loading="lazy">
         </figure>
         <div class="reveal">
-          <p class="eyebrow">Now launching</p>
-          <h2 class="section-title">Premium herbal shampoo, made for Pakistan</h2>
-          <p class="section-lead">One hero formula — silky feel, everyday strength, and a clean finish without a crowded product line.</p>
+          <p class="eyebrow">Best herbal shampoo Pakistan</p>
+          <h1 class="section-title">Kyravia — premium herbal shampoo made for Pakistan</h1>
+          <p class="section-lead">Looking for the best shampoo in Pakistan for everyday silk and strength? Kyravia is a single hero formula — clean rinse, soft finish, no product clutter.</p>
           <div class="price-line">
             <span class="price-now"><?= e(format_price(PRODUCT_PRICE)) ?></span>
             <span class="price-note"><?= e(PRODUCT_SIZE) ?> · Cash on delivery</span>
@@ -57,7 +56,7 @@ require_once __DIR__ . '/includes/header.php';
     </section>
 
     <section class="launch-strip">
-      <img src="assets/now-launching.jpg" alt="Kyravia now launching" width="1600" height="900" loading="lazy">
+      <img src="/assets/now-launching.jpg" alt="Kyravia now launching" width="1600" height="900" loading="lazy">
       <div class="launch-overlay">
         <div class="container reveal">
           <p class="eyebrow">Campaign</p>
@@ -71,7 +70,7 @@ require_once __DIR__ . '/includes/header.php';
     <section class="section">
       <div class="container split reverse">
         <figure class="media-frame reveal">
-          <img src="assets/bottle-floating-water.jpg" alt="Kyravia bottle in water" width="900" height="1125" loading="lazy">
+          <img src="/assets/bottle-floating-water.jpg" alt="Kyravia bottle in water" width="900" height="1125" loading="lazy">
         </figure>
         <div class="reveal">
           <p class="eyebrow">Freshness</p>
@@ -85,7 +84,7 @@ require_once __DIR__ . '/includes/header.php';
     <section class="section feature-band">
       <div class="container badge-row">
         <figure class="media-frame reveal">
-          <img src="assets/badge-best-herbal-shampoo.jpg" alt="Pakistan's Best Herbal Shampoo" width="800" height="1000" loading="lazy">
+          <img src="/assets/badge-best-herbal-shampoo.jpg" alt="Pakistan's Best Herbal Shampoo" width="800" height="1000" loading="lazy">
         </figure>
         <div class="reveal">
           <p class="eyebrow">Why Kyravia</p>
@@ -103,7 +102,7 @@ require_once __DIR__ . '/includes/header.php';
     <section class="section">
       <div class="container split">
         <figure class="media-frame reveal">
-          <img src="assets/girl-thumbs-up.jpg" alt="Happy Kyravia customer" width="900" height="1125" loading="lazy">
+          <img src="/assets/girl-thumbs-up.jpg" alt="Happy Kyravia shampoo customer in Pakistan" width="900" height="1125" loading="lazy">
         </figure>
         <div class="reveal">
           <p class="eyebrow">Loved by customers</p>
@@ -113,6 +112,22 @@ require_once __DIR__ . '/includes/header.php';
             <a class="btn btn-primary" href="/reviews">Read reviews</a>
             <a class="btn btn-ghost" href="/shop">Buy now</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section feature-band">
+      <div class="container reveal">
+        <p class="eyebrow">SEO · Pakistan shampoo</p>
+        <h2 class="section-title">Why search for Kyravia shampoo?</h2>
+        <p class="section-lead" style="max-width: 70ch; margin-bottom: 1.25rem;">
+          Kyravia is built for people searching <strong style="color: var(--champagne);">best shampoo in Pakistan</strong>,
+          <strong style="color: var(--champagne);">best herbal shampoo</strong>, and <strong style="color: var(--champagne);">Kyravia</strong>.
+          One premium 400&nbsp;ml bottle, nationwide online orders, and wholesale hubs in Rawalpindi, Kashmir, and Karachi.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/faq">Read FAQs</a>
+          <a class="btn btn-ghost" href="/shop">Order Kyravia</a>
         </div>
       </div>
     </section>

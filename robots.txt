@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /process/
+Disallow: /data/
+
+Sitemap: /sitemap.xml

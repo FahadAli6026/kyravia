@@ -1,6 +1,5 @@
 <?php
 declare(strict_types=1);
-$pageTitle = 'Product — Kyravia Premium Herbal Shampoo';
 require_once __DIR__ . '/includes/header.php';
 ?>
 
@@ -16,7 +15,7 @@ require_once __DIR__ . '/includes/header.php';
     <section class="section">
       <div class="container split">
         <figure class="media-frame reveal">
-          <img src="assets/hero-product.jpg" alt="Kyravia Premium Shampoo" width="900" height="1125">
+          <img src="/assets/hero-product.jpg" alt="Kyravia Premium Shampoo" width="900" height="1125">
         </figure>
         <div class="reveal">
           <p class="eyebrow"><?= e(PRODUCT_SIZE) ?></p>
@@ -39,7 +38,7 @@ require_once __DIR__ . '/includes/header.php';
     <section class="section feature-band">
       <div class="container split reverse">
         <figure class="media-frame reveal">
-          <img src="assets/model-campaign.jpg" alt="Kyravia campaign" width="900" height="1125" loading="lazy">
+          <img src="/assets/model-campaign.jpg" alt="Kyravia campaign" width="900" height="1125" loading="lazy">
         </figure>
         <div class="reveal">
           <p class="eyebrow">The result</p>

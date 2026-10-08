@@ -13,6 +13,7 @@
           <li><a href="<?= e(url_path('ingredients')) ?>">Ingredients</a></li>
           <li><a href="<?= e(url_path('how-to-use')) ?>">How to use</a></li>
           <li><a href="<?= e(url_path('about')) ?>">About</a></li>
+          <li><a href="<?= e(url_path('faq')) ?>">FAQ</a></li>
         </ul>
       </div>
       <div>

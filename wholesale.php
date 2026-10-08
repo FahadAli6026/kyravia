@@ -1,6 +1,5 @@
-<?php
+﻿<?php
 declare(strict_types=1);
-$pageTitle = 'Wholesale — Kyravia';
 require_once __DIR__ . '/includes/header.php';
 
 $wholesaleStatus = $_GET['wholesale'] ?? '';
@@ -32,7 +31,7 @@ $flashMsg = isset($_GET['msg']) ? (string) $_GET['msg'] : '';
     <section class="section feature-band">
       <div class="container split">
         <figure class="media-frame reveal">
-          <img src="assets/badge-best-herbal-shampoo.jpg" alt="Kyravia wholesale product" width="800" height="1000" loading="lazy">
+          <img src="/assets/badge-best-herbal-shampoo.jpg" alt="Kyravia wholesale product" width="800" height="1000" loading="lazy">
         </figure>
         <div class="shop-panel reveal">
           <p class="eyebrow">Inquiry</p>

@@ -1,6 +1,5 @@
-<?php
+﻿<?php
 declare(strict_types=1);
-$pageTitle = 'Ingredients — Kyravia';
 require_once __DIR__ . '/includes/header.php';
 ?>
 
@@ -16,7 +15,7 @@ require_once __DIR__ . '/includes/header.php';
     <section class="section">
       <div class="container split">
         <figure class="media-frame reveal">
-          <img src="assets/herbal-ingredients-flatlay.jpg" alt="Kyravia with herbal ingredients" width="1000" height="1250">
+          <img src="/assets/herbal-ingredients-flatlay.jpg" alt="Kyravia with herbal ingredients" width="1000" height="1250">
         </figure>
         <div class="reveal">
           <p class="eyebrow">Inside the formula</p>
@@ -35,7 +34,7 @@ require_once __DIR__ . '/includes/header.php';
     <section class="section feature-band">
       <div class="container split reverse">
         <figure class="media-frame reveal">
-          <img src="assets/bottle-floating-water.jpg" alt="Fresh Kyravia rinse feel" width="900" height="1125" loading="lazy">
+          <img src="/assets/bottle-floating-water.jpg" alt="Fresh Kyravia rinse feel" width="900" height="1125" loading="lazy">
         </figure>
         <div class="reveal">
           <p class="eyebrow">The wash</p>
