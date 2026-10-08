@@ -5,6 +5,11 @@
           <img src="/assets/logo.png" alt="Kyravia" width="180" height="100">
         </a>
         <p><?= e(SITE_TAGLINE) ?></p>
+        <div class="footer-social">
+          <a class="social-link social-facebook" href="<?= e(FACEBOOK_URL) ?>" target="_blank" rel="noopener noreferrer">
+            Facebook
+          </a>
+        </div>
       </div>
       <div>
         <h3>Explore</h3>
@@ -37,6 +42,9 @@
           <li>Email:
             <a href="mailto:<?= e(SITE_EMAIL) ?>"><?= e(SITE_EMAIL) ?></a>
           </li>
+          <li>Facebook:
+            <a href="<?= e(FACEBOOK_URL) ?>" target="_blank" rel="noopener noreferrer">kyravia.official</a>
+          </li>
         </ul>
         <h3 style="margin-top: 1.35rem;">Wholesale hubs</h3>
         <ul>
@@ -54,6 +62,6 @@
       </p>
     </div>
   </footer>
-  <script src="/js/main.js?v=mobile6"></script>
+  <script src="/js/main.js?v=fb7"></script>
 </body>
 </html>

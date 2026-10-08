@@ -25,7 +25,7 @@ $graphSchema = [
             'email' => SITE_EMAIL,
             'telephone' => '+92-310-2527293',
             'areaServed' => 'PK',
-            'sameAs' => [],
+            'sameAs' => [FACEBOOK_URL],
         ],
         [
             '@type' => 'WebSite',
@@ -92,7 +92,7 @@ $productSchema = [
   <link rel="apple-touch-icon" href="/assets/favicon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="/css/styles.css?v=mobile6">
+  <link rel="stylesheet" href="/css/styles.css?v=fb7">
 
   <script type="application/ld+json"><?= json_encode($graphSchema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
   <?php if ($current === '' || $current === 'product' || $current === 'shop'): ?>

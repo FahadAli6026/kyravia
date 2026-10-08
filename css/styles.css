@@ -696,6 +696,30 @@ textarea {
   font-size: 1.15rem;
 }
 
+.footer-social {
+  margin-top: 1.1rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  border: 1px solid var(--line);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.social-link:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
+}
+
 .site-footer h3 {
   margin: 0 0 0.85rem;
   font-size: 0.68rem;
