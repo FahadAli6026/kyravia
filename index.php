@@ -24,7 +24,7 @@ require_once __DIR__ . '/includes/header.php';
         [
             'src' => '/assets/slider/slide-4-product.jpg',
             'alt' => 'Kyravia Premium Herbal Shampoo 400ml bottle',
-            'label' => '400 ml · Rs 1,890',
+            'label' => '400 ml · Rs 300',
         ],
         [
             'src' => '/assets/slider/slide-5-emerald.jpg',

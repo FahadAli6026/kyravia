@@ -151,17 +151,17 @@ function default_seo_for_page(string $slug): array
     $map = [
         '' => [
             'title' => 'Kyravia Herbal Shampoo – Premium Shampoo in Pakistan',
-            'description' => 'Kyravia premium herbal shampoo, 400 ml for Rs 1,890. Silky, strong hair for Pakistan\'s heat and dust. Cash on delivery nationwide. Order online today.',
+            'description' => 'Kyravia premium herbal shampoo, 400 ml for Rs 300. Silky, strong hair for Pakistan\'s heat and dust. Cash on delivery nationwide. Order online today.',
             'keywords' => 'herbal shampoo Pakistan, Kyravia shampoo, premium shampoo Pakistan, shampoo price in Pakistan, buy shampoo online Pakistan',
         ],
         'product' => [
-            'title' => 'Kyravia Herbal Shampoo 400ml – Price in Pakistan Rs 1,890',
+            'title' => 'Kyravia Herbal Shampoo 400ml – Price in Pakistan Rs 300',
             'description' => 'Kyravia herbal shampoo 400 ml: price, benefits and details. A premium daily shampoo for silky, manageable hair. Available with cash on delivery.',
             'keywords' => 'Kyravia shampoo 400ml, shampoo price in Pakistan, herbal shampoo buy online',
         ],
         'shop' => [
             'title' => 'Buy Kyravia Herbal Shampoo Online – Cash on Delivery',
-            'description' => 'Order Kyravia herbal shampoo 400 ml at Rs 1,890 with cash on delivery across Pakistan. Quick phone confirmation and fast delivery.',
+            'description' => 'Order Kyravia herbal shampoo 400 ml at Rs 300 with cash on delivery across Pakistan. Quick phone confirmation and fast delivery.',
             'keywords' => 'buy shampoo online Pakistan, shampoo cash on delivery, Kyravia order',
         ],
         'ingredients' => [
