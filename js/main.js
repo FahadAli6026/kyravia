@@ -1,31 +1,33 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const nav = document.querySelector(".site-nav");
-  const toggle = document.querySelector(".nav-toggle");
-  const primaryNav = document.querySelector(".primary-nav");
-  const reveals = document.querySelectorAll(".reveal");
+document.addEventListener("DOMContentLoaded", function () {
+  var nav = document.querySelector(".site-nav");
+  var toggle = document.querySelector(".nav-toggle");
+  var primaryNav = document.querySelector(".primary-nav");
+  var reveals = document.querySelectorAll(".reveal");
 
-  const onScroll = () => {
+  function onScroll() {
     if (!nav) return;
     nav.classList.toggle("is-scrolled", window.scrollY > 24);
-  };
+  }
 
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
   if (toggle && primaryNav) {
-    toggle.addEventListener("click", () => {
-      const open = primaryNav.classList.toggle("is-open");
+    toggle.addEventListener("click", function () {
+      var open = primaryNav.classList.toggle("is-open");
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
       document.body.classList.toggle("nav-open", open);
     });
   }
 
-  const show = (el) => el.classList.add("is-visible");
+  function show(el) {
+    el.classList.add("is-visible");
+  }
 
   if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             show(entry.target);
             observer.unobserve(entry.target);
@@ -35,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { threshold: 0.08, rootMargin: "0px 0px -20px 0px" }
     );
 
-    reveals.forEach((el) => {
+    reveals.forEach(function (el) {
       if (el.getBoundingClientRect().top < window.innerHeight * 0.92) {
         show(el);
       } else {
@@ -46,63 +48,101 @@ document.addEventListener("DOMContentLoaded", () => {
     reveals.forEach(show);
   }
 
-  const slider = document.querySelector("[data-slider]");
-  if (slider) {
-    const slides = Array.from(slider.querySelectorAll(".hero-slide"));
-    const dots = Array.from(slider.querySelectorAll(".slider-dot"));
-    const label = slider.querySelector("[data-slide-label]");
-    const labels = slides.map((_, i) => {
-      const map = [
-        "Silky. Strong. Unstoppable.",
-        "Pakistan ke baalon ki pehchaan",
-        "Premium herbal care",
-        "400 ml · Rs 1,890",
-        "Luxury daily restore",
-        "Soft. Light. Ready.",
-        "Order online · COD",
-      ];
-      return map[i] || "";
-    });
-    let index = 0;
-    let timer;
+  var slider = document.querySelector("[data-slider]");
+  if (!slider) return;
 
-    const goTo = (next) => {
-      slides[index]?.classList.remove("is-active");
-      dots[index]?.classList.remove("is-active");
-      index = (next + slides.length) % slides.length;
-      slides[index]?.classList.add("is-active");
-      dots[index]?.classList.add("is-active");
-      if (label) {
-        label.style.opacity = "0";
-        window.setTimeout(() => {
-          label.textContent = labels[index] || "";
-          label.style.opacity = "1";
-        }, 180);
-      }
-    };
+  var track = slider.querySelector(".hero-slider-track");
+  var slides = slider.querySelectorAll(".hero-slide");
+  var dots = slider.querySelectorAll(".slider-dot");
+  var label = slider.querySelector("[data-slide-label]");
+  var prevBtn = slider.querySelector(".slider-prev");
+  var nextBtn = slider.querySelector(".slider-next");
+  var labels = [
+    "Silky. Strong. Unstoppable.",
+    "Pakistan ke baalon ki pehchaan",
+    "Premium herbal care",
+    "400 ml · Rs 1,890",
+    "Luxury daily restore",
+    "Soft. Light. Ready.",
+    "Order online · COD",
+  ];
+  var index = 0;
+  var timer = null;
+  var total = slides.length;
 
-    const play = () => {
-      window.clearInterval(timer);
-      timer = window.setInterval(() => goTo(index + 1), 5500);
-    };
+  function goTo(next) {
+    index = ((next % total) + total) % total;
+    if (track) {
+      track.style.transform = "translate3d(" + -index * 100 + "%, 0, 0)";
+    }
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].classList.toggle("is-active", i === index);
+    }
+    for (var d = 0; d < dots.length; d++) {
+      dots[d].classList.toggle("is-active", d === index);
+    }
+    if (label) {
+      label.textContent = labels[index] || "";
+    }
+  }
 
-    slider.querySelector(".slider-prev")?.addEventListener("click", () => {
+  function play() {
+    if (timer) window.clearInterval(timer);
+    timer = window.setInterval(function () {
+      goTo(index + 1);
+    }, 4500);
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", function (e) {
+      e.preventDefault();
       goTo(index - 1);
       play();
     });
-    slider.querySelector(".slider-next")?.addEventListener("click", () => {
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener("click", function (e) {
+      e.preventDefault();
       goTo(index + 1);
       play();
     });
-    dots.forEach((dot) => {
-      dot.addEventListener("click", () => {
-        goTo(Number(dot.dataset.goto || 0));
+  }
+  for (var i = 0; i < dots.length; i++) {
+    (function (dotIndex) {
+      dots[dotIndex].addEventListener("click", function (e) {
+        e.preventDefault();
+        goTo(dotIndex);
         play();
       });
-    });
-
-    slider.addEventListener("mouseenter", () => window.clearInterval(timer));
-    slider.addEventListener("mouseleave", play);
-    play();
+    })(i);
   }
+
+  // Touch swipe
+  var startX = 0;
+  slider.addEventListener(
+    "touchstart",
+    function (e) {
+      startX = e.changedTouches[0].screenX;
+    },
+    { passive: true }
+  );
+  slider.addEventListener(
+    "touchend",
+    function (e) {
+      var diff = e.changedTouches[0].screenX - startX;
+      if (Math.abs(diff) < 40) return;
+      if (diff < 0) goTo(index + 1);
+      else goTo(index - 1);
+      play();
+    },
+    { passive: true }
+  );
+
+  slider.addEventListener("mouseenter", function () {
+    if (timer) window.clearInterval(timer);
+  });
+  slider.addEventListener("mouseleave", play);
+
+  goTo(0);
+  play();
 });

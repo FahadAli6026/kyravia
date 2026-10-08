@@ -69,8 +69,8 @@ require_once __DIR__ . '/includes/header.php';
           </div>
         </div>
       </div>
-      <button class="slider-btn slider-prev" type="button" aria-label="Previous slide">‹</button>
-      <button class="slider-btn slider-next" type="button" aria-label="Next slide">›</button>
+      <button class="slider-btn slider-prev" type="button" aria-label="Previous slide">&lsaquo;</button>
+      <button class="slider-btn slider-next" type="button" aria-label="Next slide">&rsaquo;</button>
       <div class="slider-dots" role="tablist" aria-label="Slider pagination">
         <?php foreach ($slides as $i => $slide): ?>
           <button type="button" class="slider-dot<?= $i === 0 ? ' is-active' : '' ?>" data-goto="<?= $i ?>" aria-label="Go to slide <?= $i + 1 ?>"></button>
