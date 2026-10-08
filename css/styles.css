@@ -719,9 +719,9 @@ textarea {
 }
 
 .social-icon:hover {
-  background: #1877f2;
-  border-color: #1877f2;
-  color: #fff;
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--black);
   transform: translateY(-2px);
 }
 
