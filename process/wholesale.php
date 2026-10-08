@@ -4,8 +4,7 @@ declare(strict_types=1);
 require_once dirname(__DIR__) . '/includes/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: ../index.php#wholesale');
-    exit;
+    redirect_to('wholesale');
 }
 
 global $WHOLESALE_CITIES;
@@ -39,12 +38,10 @@ if ($message === '' || mb_strlen($message) < 10) {
 }
 
 if ($errors) {
-    $query = http_build_query([
+    redirect_to('wholesale', [
         'wholesale' => 'error',
         'msg' => implode(' ', $errors),
     ]);
-    header('Location: ../index.php?' . $query . '#wholesale');
-    exit;
 }
 
 $record = [
@@ -59,18 +56,34 @@ $record = [
     'created_at' => date('c'),
 ];
 
-if (!append_json_record(INQUIRIES_FILE, $record)) {
-    $query = http_build_query([
-        'wholesale' => 'error',
-        'msg' => 'Could not save your inquiry. Please try again.',
-    ]);
-    header('Location: ../index.php?' . $query . '#wholesale');
-    exit;
-}
+append_json_record(INQUIRIES_FILE, $record);
 
-$query = http_build_query([
-    'wholesale' => 'ok',
-    'msg' => 'Wholesale inquiry sent. Our ' . $hub . ' team will contact you.',
+$mailBody = implode("\n", [
+    'New Kyravia wholesale inquiry',
+    '-----------------------------',
+    'Inquiry ID: ' . $record['id'],
+    'Hub: ' . $hub,
+    '',
+    'Name: ' . $name,
+    'Business: ' . $business,
+    'Phone: ' . $phone,
+    'Email: ' . ($email !== '' ? $email : '—'),
+    '',
+    'Message:',
+    $message,
+    '',
+    'Submitted at: ' . date('Y-m-d H:i:s'),
 ]);
-header('Location: ../index.php?' . $query . '#wholesale');
-exit;
+
+$mailed = send_site_email(
+    'Wholesale inquiry — ' . $business . ' (' . $hub . ')',
+    $mailBody,
+    $email !== '' ? $email : null
+);
+
+redirect_to('wholesale', [
+    'wholesale' => 'ok',
+    'msg' => $mailed
+        ? 'Inquiry emailed to Kyravia. Our ' . $hub . ' team will contact you.'
+        : 'Wholesale inquiry received. Our ' . $hub . ' team will contact you.',
+]);

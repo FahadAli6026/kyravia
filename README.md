@@ -1,6 +1,8 @@
 # Kyravia
 
-Single-product shampoo brand site (HTML/CSS + PHP).
+Premium herbal shampoo brand site (HTML/CSS + PHP).
+
+Tagline: **Pakistan ke baalon ki pehchaan**
 
 ## Run locally
 
@@ -8,13 +10,17 @@ Single-product shampoo brand site (HTML/CSS + PHP).
 php -S localhost:8000 router.php
 ```
 
-Open http://localhost:8000
+## Pages (clean URLs)
 
-## What it does
+- `/` — Home
+- `/product` — Product
+- `/ingredients` — Ingredients
+- `/how-to-use` — How to use
+- `/about` — About
+- `/reviews` — Reviews
+- `/wholesale` — Wholesale
+- `/shop` — Online order
 
-- Landing page with product story and order form
-- Wholesale inquiry for Rawalpindi, Kashmir, and Karachi
-- Orders saved to `data/orders.json`
-- Wholesale inquiries saved to `data/wholesale.json`
+Orders & wholesale forms email **kyraviashampoo@gmail.com** (needs working PHP `mail()` / SMTP on the server).
 
-Update product name, price, and size in `includes/config.php`.
+Update contact/price in `includes/config.php`.

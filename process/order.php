@@ -4,8 +4,7 @@ declare(strict_types=1);
 require_once dirname(__DIR__) . '/includes/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: ../index.php#order');
-    exit;
+    redirect_to('shop');
 }
 
 $name = trim((string) ($_POST['name'] ?? ''));
@@ -37,13 +36,13 @@ if ($qty < 1 || $qty > 20) {
 }
 
 if ($errors) {
-    $query = http_build_query([
+    redirect_to('shop', [
         'order' => 'error',
         'msg' => implode(' ', $errors),
     ]);
-    header('Location: ../index.php?' . $query . '#order');
-    exit;
 }
+
+$total = PRODUCT_PRICE * $qty;
 
 $record = [
     'id' => uniqid('ord_', true),
@@ -51,7 +50,7 @@ $record = [
     'product' => PRODUCT_NAME,
     'unit_price' => PRODUCT_PRICE,
     'quantity' => $qty,
-    'total' => PRODUCT_PRICE * $qty,
+    'total' => $total,
     'name' => $name,
     'phone' => $phone,
     'email' => $email,
@@ -60,18 +59,35 @@ $record = [
     'created_at' => date('c'),
 ];
 
-if (!append_json_record(ORDERS_FILE, $record)) {
-    $query = http_build_query([
-        'order' => 'error',
-        'msg' => 'Could not save your order. Please try again.',
-    ]);
-    header('Location: ../index.php?' . $query . '#order');
-    exit;
-}
+append_json_record(ORDERS_FILE, $record);
 
-$query = http_build_query([
-    'order' => 'ok',
-    'msg' => 'Order received. We will confirm on WhatsApp/phone shortly.',
+$mailBody = implode("\n", [
+    'New Kyravia online order',
+    '------------------------',
+    'Order ID: ' . $record['id'],
+    'Product: ' . PRODUCT_NAME,
+    'Quantity: ' . $qty,
+    'Unit price: ' . format_price(PRODUCT_PRICE),
+    'Total: ' . format_price($total),
+    '',
+    'Customer name: ' . $name,
+    'Phone: ' . $phone,
+    'Email: ' . ($email !== '' ? $email : '—'),
+    'City: ' . $city,
+    'Address: ' . $address,
+    '',
+    'Submitted at: ' . date('Y-m-d H:i:s'),
 ]);
-header('Location: ../index.php?' . $query . '#order');
-exit;
+
+$mailed = send_site_email(
+    'New Kyravia order — ' . $name,
+    $mailBody,
+    $email !== '' ? $email : null
+);
+
+redirect_to('shop', [
+    'order' => 'ok',
+    'msg' => $mailed
+        ? 'Order received. Confirmation email sent — we will contact you shortly.'
+        : 'Order received. We will confirm on WhatsApp/phone shortly.',
+]);

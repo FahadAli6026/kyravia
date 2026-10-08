@@ -1,212 +1,117 @@
 <?php
 declare(strict_types=1);
-
-$pageTitle = 'Kyravia — Daily Restore Shampoo';
+$pageTitle = 'Kyravia — Pakistan ke baalon ki pehchaan';
 require_once __DIR__ . '/includes/header.php';
-
-$orderStatus = $_GET['order'] ?? '';
-$wholesaleStatus = $_GET['wholesale'] ?? '';
-$flashMsg = isset($_GET['msg']) ? (string) $_GET['msg'] : '';
 ?>
 
   <main>
-    <section class="hero" aria-label="Kyravia hero">
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <h1 class="hero-brand">Kyravia</h1>
-          <p class="hero-headline">One shampoo. Clean restore, every wash.</p>
-          <p class="hero-support">A single formula for daily strength and soft shine — made for hair that lives through heat, dust, and long days.</p>
+    <section class="hero-banner" aria-label="Kyravia banner">
+      <img src="assets/banner-silky-strong.jpg" alt="Silky. Strong. Unstoppable. New Kyravia Shampoo" width="1920" height="900" fetchpriority="high">
+      <div class="hero-banner-cta">
+        <div class="container">
+          <p><?= e(SITE_TAGLINE) ?></p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="#order">Order online</a>
-            <a class="btn btn-ghost" href="#wholesale">Wholesale supply</a>
-          </div>
-        </div>
-        <div class="hero-visual" aria-hidden="true">
-          <div class="bottle-stage">
-            <div class="bottle-glow"></div>
-            <div class="bottle">
-              <div class="bottle-liquid"></div>
-            </div>
+            <a class="btn btn-primary" href="/shop">Shop now</a>
+            <a class="btn btn-ghost" href="/product">View product</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section story">
-      <div class="container story-grid">
-        <article class="story-item reveal">
-          <h3>One product focus</h3>
-          <p>We make a single shampoo so every bottle stays consistent — no line clutter, no diluted formulas.</p>
-        </article>
-        <article class="story-item reveal">
-          <h3>Daily restore</h3>
-          <p>Gentle cleanse with a botanical base that leaves hair calm, light, and ready for the next day.</p>
-        </article>
-        <article class="story-item reveal">
-          <h3>Pakistan supply</h3>
-          <p>Retail online nationwide. Wholesale stocked from Rawalpindi, Kashmir, and Karachi.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section product" id="product">
-      <div class="container product-layout">
-        <div class="product-panel reveal" aria-hidden="true">
-          <div class="bottle-stage">
-            <div class="bottle-glow"></div>
-            <div class="bottle">
-              <div class="bottle-liquid"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-meta reveal">
-          <p class="section-eyebrow">The product</p>
-          <h2 class="section-title"><?= e(PRODUCT_NAME) ?></h2>
-          <p class="section-lead">Our only retail SKU — <?= e(PRODUCT_SIZE) ?> of daily restore shampoo for all hair types that need a clean, soft finish.</p>
-
-          <div class="product-price">
+    <section class="section">
+      <div class="container split">
+        <figure class="media-frame reveal">
+          <img src="assets/hero-product.jpg" alt="Kyravia Premium Shampoo bottle" width="900" height="1125" loading="lazy">
+        </figure>
+        <div class="reveal">
+          <p class="eyebrow">Now launching</p>
+          <h2 class="section-title">Premium herbal shampoo, made for Pakistan</h2>
+          <p class="section-lead">One hero formula — silky feel, everyday strength, and a clean finish without a crowded product line.</p>
+          <div class="price-line">
             <span class="price-now"><?= e(format_price(PRODUCT_PRICE)) ?></span>
-            <span class="price-note"><?= e(PRODUCT_SIZE) ?> · COD available</span>
+            <span class="price-note"><?= e(PRODUCT_SIZE) ?> · Cash on delivery</span>
           </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/shop">Order online</a>
+            <a class="btn btn-ghost" href="/ingredients">See ingredients</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <ul class="product-points">
-            <li>Sulfate-conscious cleanse for everyday use</li>
-            <li>Light botanical scent, no heavy residue</li>
-            <li>Ships across Pakistan from our supply network</li>
+    <section class="section feature-band">
+      <div class="container feature-grid">
+        <article class="feature-card reveal">
+          <h3>Silky soft</h3>
+          <p>A smooth cleanse that leaves hair light and manageable after every wash.</p>
+        </article>
+        <article class="feature-card reveal">
+          <h3>Everyday strong</h3>
+          <p>Built for heat, dust, and long days — restore without heaviness.</p>
+        </article>
+        <article class="feature-card reveal">
+          <h3>Herbal care</h3>
+          <p>Crafted around trusted botanical notes for a fresh, premium wash.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="launch-strip">
+      <img src="assets/now-launching.jpg" alt="Kyravia now launching" width="1600" height="900" loading="lazy">
+      <div class="launch-overlay">
+        <div class="container reveal">
+          <p class="eyebrow">Campaign</p>
+          <h2 class="section-title">Fresh launch energy</h2>
+          <p class="section-lead" style="color: var(--champagne); margin-bottom: 1.25rem;">Discover the bottle Pakistan is talking about — shop retail or partner wholesale.</p>
+          <a class="btn btn-primary" href="/about">Our story</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split reverse">
+        <figure class="media-frame reveal">
+          <img src="assets/bottle-floating-water.jpg" alt="Kyravia bottle in water" width="900" height="1125" loading="lazy">
+        </figure>
+        <div class="reveal">
+          <p class="eyebrow">Freshness</p>
+          <h2 class="section-title">Clean rinse. Light finish.</h2>
+          <p class="section-lead">Feel the difference of a focused formula — no clutter, just a premium wash that resets hair for the day ahead.</p>
+          <a class="btn btn-ghost" href="/how-to-use" style="margin-top: 1.5rem;">How to use</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section feature-band">
+      <div class="container badge-row">
+        <figure class="media-frame reveal">
+          <img src="assets/badge-best-herbal-shampoo.jpg" alt="Pakistan's Best Herbal Shampoo" width="800" height="1000" loading="lazy">
+        </figure>
+        <div class="reveal">
+          <p class="eyebrow">Why Kyravia</p>
+          <h2 class="section-title">One product. Clear promise.</h2>
+          <ul class="checklist">
+            <li>Single SKU focus for consistent quality</li>
+            <li>Retail online with phone confirmation</li>
+            <li>Wholesale hubs in Rawalpindi, Kashmir &amp; Karachi</li>
           </ul>
-
-          <a class="btn btn-dark" href="#order">Buy <?= e(PRODUCT_NAME) ?></a>
+          <a class="btn btn-primary" href="/wholesale">Wholesale inquiry</a>
         </div>
       </div>
     </section>
 
-    <section class="section product" id="order" style="padding-top: 0;">
-      <div class="container" style="max-width: 720px;">
+    <section class="section">
+      <div class="container split">
+        <figure class="media-frame reveal">
+          <img src="assets/girl-thumbs-up.jpg" alt="Happy Kyravia customer" width="900" height="1125" loading="lazy">
+        </figure>
         <div class="reveal">
-          <p class="section-eyebrow">Online order</p>
-          <h2 class="section-title">Place your order</h2>
-          <p class="section-lead">One product, straightforward checkout. We confirm by phone before dispatch.</p>
-        </div>
-
-        <?php if ($orderStatus === 'ok' && $flashMsg !== ''): ?>
-          <div class="alert alert-success" role="status"><?= e($flashMsg) ?></div>
-        <?php elseif ($orderStatus === 'error' && $flashMsg !== ''): ?>
-          <div class="alert alert-error" role="alert"><?= e($flashMsg) ?></div>
-        <?php endif; ?>
-
-        <form class="order-form reveal" action="process/order.php" method="post" novalidate>
-          <div class="form-row two">
-            <div class="form-row">
-              <label for="name">Full name</label>
-              <input id="name" name="name" type="text" required autocomplete="name" placeholder="Your name">
-            </div>
-            <div class="form-row">
-              <label for="phone">Phone / WhatsApp</label>
-              <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="03xx xxxxxxx">
-            </div>
-          </div>
-
-          <div class="form-row two">
-            <div class="form-row">
-              <label for="email">Email (optional)</label>
-              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com">
-            </div>
-            <div class="form-row">
-              <label for="quantity">Quantity</label>
-              <select id="quantity" name="quantity" required>
-                <?php for ($i = 1; $i <= 10; $i++): ?>
-                  <option value="<?= $i ?>"<?= $i === 1 ? ' selected' : '' ?>><?= $i ?> bottle<?= $i > 1 ? 's' : '' ?> — <?= e(format_price(PRODUCT_PRICE * $i)) ?></option>
-                <?php endfor; ?>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <label for="city">City</label>
-            <input id="city" name="city" type="text" required autocomplete="address-level2" placeholder="Delivery city">
-          </div>
-
-          <div class="form-row">
-            <label for="address">Delivery address</label>
-            <textarea id="address" name="address" required placeholder="House / street / area"></textarea>
-          </div>
-
-          <button class="btn btn-primary" type="submit">Submit order</button>
-        </form>
-      </div>
-    </section>
-
-    <section class="section wholesale" id="wholesale">
-      <div class="container">
-        <div class="reveal">
-          <p class="section-eyebrow">Wholesale</p>
-          <h2 class="section-title">Supply hubs across Pakistan</h2>
-          <p class="section-lead">Stock Kyravia for your shop or salon. We supply wholesale from three hubs — pick the nearest and send an inquiry.</p>
-        </div>
-
-        <ul class="city-list">
-          <?php foreach ($WHOLESALE_CITIES as $city => $note): ?>
-            <li class="city-item reveal">
-              <h3 class="city-name"><?= e($city) ?></h3>
-              <p class="city-note"><?= e($note) ?></p>
-            </li>
-          <?php endforeach; ?>
-        </ul>
-
-        <div class="wholesale-form-wrap reveal">
-          <div>
-            <h3 class="section-title" style="font-size: 1.85rem;">Request wholesale pricing</h3>
-            <p class="section-lead">Tell us your hub and volume needs. We reply with MOQ, rates, and delivery windows.</p>
-          </div>
-
-          <div>
-            <?php if ($wholesaleStatus === 'ok' && $flashMsg !== ''): ?>
-              <div class="alert alert-success" role="status"><?= e($flashMsg) ?></div>
-            <?php elseif ($wholesaleStatus === 'error' && $flashMsg !== ''): ?>
-              <div class="alert alert-error" role="alert"><?= e($flashMsg) ?></div>
-            <?php endif; ?>
-
-            <form class="order-form" action="process/wholesale.php" method="post" novalidate>
-              <div class="form-row two">
-                <div class="form-row">
-                  <label for="w-name">Your name</label>
-                  <input id="w-name" name="name" type="text" required placeholder="Contact person">
-                </div>
-                <div class="form-row">
-                  <label for="business">Business / shop</label>
-                  <input id="business" name="business" type="text" required placeholder="Shop or salon name">
-                </div>
-              </div>
-
-              <div class="form-row two">
-                <div class="form-row">
-                  <label for="w-phone">Phone</label>
-                  <input id="w-phone" name="phone" type="tel" required placeholder="03xx xxxxxxx">
-                </div>
-                <div class="form-row">
-                  <label for="w-email">Email (optional)</label>
-                  <input id="w-email" name="email" type="email" placeholder="orders@shop.com">
-                </div>
-              </div>
-
-              <div class="form-row">
-                <label for="hub">Preferred hub</label>
-                <select id="hub" name="hub" required>
-                  <option value="" disabled selected>Select a city</option>
-                  <?php foreach (array_keys($WHOLESALE_CITIES) as $city): ?>
-                    <option value="<?= e($city) ?>"><?= e($city) ?></option>
-                  <?php endforeach; ?>
-                </select>
-              </div>
-
-              <div class="form-row">
-                <label for="message">What do you need?</label>
-                <textarea id="message" name="message" required placeholder="Estimated monthly bottles, delivery area, etc."></textarea>
-              </div>
-
-              <button class="btn btn-primary" type="submit">Send inquiry</button>
-            </form>
+          <p class="eyebrow">Loved by customers</p>
+          <h2 class="section-title">Real wash. Real feedback.</h2>
+          <p class="section-lead">See why shoppers choose Kyravia for daily restore — then place your order in minutes.</p>
+          <div class="cta-row" style="margin-top: 1.5rem;">
+            <a class="btn btn-primary" href="/reviews">Read reviews</a>
+            <a class="btn btn-ghost" href="/shop">Buy now</a>
           </div>
         </div>
       </div>
