@@ -54,18 +54,8 @@ document.addEventListener("DOMContentLoaded", function () {
   var track = slider.querySelector(".hero-slider-track");
   var slides = slider.querySelectorAll(".hero-slide");
   var dots = slider.querySelectorAll(".slider-dot");
-  var label = slider.querySelector("[data-slide-label]");
   var prevBtn = slider.querySelector(".slider-prev");
   var nextBtn = slider.querySelector(".slider-next");
-  var labels = [
-    "Silky. Strong. Unstoppable.",
-    "Pakistan ke baalon ki pehchaan",
-    "Premium herbal care",
-    "400 ml · Rs 1,890",
-    "Luxury daily restore",
-    "Soft. Light. Ready.",
-    "Order online · COD",
-  ];
   var index = 0;
   var timer = null;
   var total = slides.length;
@@ -80,9 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     for (var d = 0; d < dots.length; d++) {
       dots[d].classList.toggle("is-active", d === index);
-    }
-    if (label) {
-      label.textContent = labels[index] || "";
     }
   }
 

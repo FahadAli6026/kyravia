@@ -57,20 +57,6 @@ require_once __DIR__ . '/includes/header.php';
           </div>
         <?php endforeach; ?>
       </div>
-      <div class="hero-slider-veil" aria-hidden="true"></div>
-      <div class="hero-slider-content">
-        <div class="container">
-          <div class="hero-slider-copy">
-            <h1>Kyravia Premium Herbal Shampoo</h1>
-            <p class="hero-tagline"><?= e(SITE_TAGLINE) ?></p>
-            <p class="hero-slide-label" data-slide-label><?= e($slides[0]['label']) ?></p>
-            <div class="cta-row">
-              <a class="btn btn-primary" href="/shop">Shop now</a>
-              <a class="btn btn-ghost" href="/product">View product</a>
-            </div>
-          </div>
-        </div>
-      </div>
       <button class="slider-btn slider-prev" type="button" aria-label="Previous slide">&lsaquo;</button>
       <button class="slider-btn slider-next" type="button" aria-label="Next slide">&rsaquo;</button>
       <div class="slider-dots" role="tablist" aria-label="Slider pagination">
@@ -80,19 +66,32 @@ require_once __DIR__ . '/includes/header.php';
       </div>
     </section>
 
+    <section class="section intro-band">
+      <div class="container intro-band-inner reveal">
+        <p class="eyebrow">Herbal shampoo Pakistan</p>
+        <h1 class="section-title">Kyravia Premium Herbal Shampoo</h1>
+        <p class="hero-tagline"><?= e(SITE_TAGLINE) ?></p>
+        <p class="section-lead">Looking for a premium shampoo in Pakistan for everyday silk and strength? Kyravia is a single hero formula — clean rinse, soft finish, no product clutter.</p>
+        <div class="price-line">
+          <span class="price-now"><?= e(format_price(PRODUCT_PRICE)) ?></span>
+          <span class="price-note"><?= e(PRODUCT_SIZE) ?> · Cash on delivery</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="/shop">Shop now</a>
+          <a class="btn btn-ghost" href="/product">View product</a>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container split">
         <figure class="media-frame reveal">
           <img src="/assets/hero-product.jpg" alt="Kyravia herbal shampoo 400ml bottle with gold pump" width="900" height="1125" loading="lazy">
         </figure>
         <div class="reveal">
-          <p class="eyebrow">Herbal shampoo Pakistan</p>
+          <p class="eyebrow">The product</p>
           <h2 class="section-title">Premium herbal shampoo made for Pakistan</h2>
-          <p class="section-lead">Looking for a premium shampoo in Pakistan for everyday silk and strength? Kyravia is a single hero formula — clean rinse, soft finish, no product clutter.</p>
-          <div class="price-line">
-            <span class="price-now"><?= e(format_price(PRODUCT_PRICE)) ?></span>
-            <span class="price-note"><?= e(PRODUCT_SIZE) ?> · Cash on delivery</span>
-          </div>
+          <p class="section-lead">One focused 400 ml formula for heat, dust, and long days — silky feel without a crowded shower shelf.</p>
           <div class="cta-row">
             <a class="btn btn-primary" href="/shop">Order online</a>
             <a class="btn btn-ghost" href="/ingredients">See ingredients</a>

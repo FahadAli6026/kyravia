@@ -241,74 +241,46 @@ textarea {
   display: block;
 }
 
-.hero-slider-veil {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+.intro-band {
   background:
-    linear-gradient(250deg, rgba(11, 11, 11, 0.78) 0%, rgba(11, 11, 11, 0.25) 42%, transparent 62%),
-    linear-gradient(180deg, rgba(11, 11, 11, 0.15) 0%, transparent 40%, rgba(11, 11, 11, 0.72) 100%);
-  pointer-events: none;
+    radial-gradient(ellipse 55% 80% at 85% 20%, rgba(212, 175, 55, 0.1), transparent 55%),
+    var(--black-2);
+  border-bottom: 1px solid var(--line-soft);
+  text-align: center;
 }
 
-.hero-slider-content {
-  position: absolute;
-  inset: auto 0 0;
-  z-index: 3;
-  padding: 2.5rem 0 4.5rem;
-  pointer-events: none;
+.intro-band-inner {
+  max-width: 46rem;
+  margin-inline: auto;
 }
 
-.hero-slider-content .container {
-  display: flex;
-  justify-content: flex-end;
-  pointer-events: none;
+.intro-band .section-title {
+  margin-inline: auto;
 }
 
-.hero-slider-copy {
-  width: min(100%, 34rem);
-  text-align: right;
-  margin-left: auto;
-  pointer-events: auto;
+.intro-band .section-lead {
+  margin-inline: auto;
+  max-width: 42ch;
 }
 
-.hero-slider-content .cta-row {
-  justify-content: flex-end;
+.intro-band .cta-row {
+  justify-content: center;
+  margin-top: 0.35rem;
 }
 
-.hero-slider-content .btn {
-  pointer-events: auto;
-}
-
-.hero-slider-content h1 {
-  margin: 0 0 0.55rem;
-  margin-left: auto;
-  max-width: 14ch;
-  font-family: var(--font-display);
-  font-size: clamp(2.4rem, 6vw, 4.2rem);
-  font-weight: 500;
-  line-height: 1.05;
-  color: var(--text);
+.intro-band .price-line {
+  justify-content: center;
+  border-top: none;
+  padding-top: 0.35rem;
+  margin-top: 1.15rem;
 }
 
 .hero-tagline {
-  margin: 0 0 0.45rem;
-  margin-left: auto;
+  margin: 0 0 1rem;
   color: var(--champagne);
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2.4vw, 1.7rem);
+  font-size: clamp(1.25rem, 2.4vw, 1.8rem);
   font-style: italic;
-}
-
-.hero-slide-label {
-  margin: 0 0 1.5rem;
-  margin-left: auto;
-  color: var(--gold-bright);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  min-height: 1.2em;
 }
 
 .slider-btn {
@@ -346,11 +318,14 @@ textarea {
 .slider-dots {
   position: absolute;
   left: 50%;
-  bottom: 1.25rem;
+  bottom: 1.35rem;
   z-index: 5;
   display: flex;
   gap: 0.55rem;
   transform: translateX(-50%);
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(11, 11, 11, 0.45);
 }
 
 .slider-dot {
@@ -862,12 +837,4 @@ textarea {
     object-fit: contain;
   }
 
-  .hero-slider-content {
-    padding-bottom: 3.75rem;
-  }
-
-  .hero-slider-copy {
-    text-align: right;
-    width: 100%;
-  }
 }
