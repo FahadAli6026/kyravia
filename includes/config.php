@@ -9,7 +9,7 @@ define('FOUNDER_PHONE_TEL', '+923102527293');
 define('SITE_EMAIL', 'kyraviashampoo@gmail.com');
 define('SITE_URL', 'https://www.kyravia.com');
 define('PRODUCT_NAME', 'Kyravia Premium Herbal Shampoo');
-define('PRODUCT_PRICE', 1890);
+define('PRODUCT_PRICE', 300);
 define('PRODUCT_SIZE', '400 ml');
 define('CURRENCY', 'PKR');
 define('PRODUCT_SKU', 'KYR-SH-400');
