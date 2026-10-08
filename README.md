@@ -27,8 +27,9 @@ Orders & wholesale forms email **kyraviashampoo@gmail.com** (needs working PHP `
 
 On-page SEO is ready (titles, sitemap, FAQ schema). Google only indexes **public hosted** sites.
 
-1. Host this PHP site on a live domain
-2. Set `SITE_URL` in `includes/config.php` (e.g. `https://yourdomain.com`)
-3. Submit `https://yourdomain.com/sitemap.xml` in [Google Search Console](https://search.google.com/search-console)
+Live site: **https://www.kyravia.com/**
+
+1. Keep `SITE_URL` as `https://www.kyravia.com` in `includes/config.php`
+2. Submit `https://www.kyravia.com/sitemap.xml` in [Google Search Console](https://search.google.com/search-console)
 
 Update contact/price in `includes/config.php`.
