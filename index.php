@@ -68,10 +68,10 @@ require_once __DIR__ . '/includes/header.php';
 
     <section class="section intro-band">
       <div class="container intro-band-inner reveal">
-        <p class="eyebrow">Herbal shampoo Pakistan</p>
-        <h1 class="section-title">Kyravia Premium Herbal Shampoo</h1>
+        <p class="eyebrow">Official Kyravia website</p>
+        <h1 class="section-title">Kyravia — premium herbal shampoo brand</h1>
         <p class="hero-tagline"><?= e(SITE_TAGLINE) ?></p>
-        <p class="section-lead">Looking for a premium shampoo in Pakistan for everyday silk and strength? Kyravia is a single hero formula — clean rinse, soft finish, no product clutter.</p>
+        <p class="section-lead"><strong style="color: var(--champagne);">Kyravia</strong> is a Pakistani premium herbal shampoo brand. This is the official Kyravia website — shop Kyravia shampoo online, learn the formula, or partner for wholesale.</p>
         <div class="price-line">
           <span class="price-now"><?= e(format_price(PRODUCT_PRICE)) ?></span>
           <span class="price-note"><?= e(PRODUCT_SIZE) ?> · Cash on delivery</span>

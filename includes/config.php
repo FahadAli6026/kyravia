@@ -151,9 +151,9 @@ function default_seo_for_page(string $slug): array
 {
     $map = [
         '' => [
-            'title' => 'Kyravia Herbal Shampoo – Premium Shampoo in Pakistan',
-            'description' => 'Kyravia premium herbal shampoo, 400 ml for Rs 300. Silky, strong hair for Pakistan\'s heat and dust. Cash on delivery nationwide. Order online today.',
-            'keywords' => 'herbal shampoo Pakistan, Kyravia shampoo, premium shampoo Pakistan, shampoo price in Pakistan, buy shampoo online Pakistan',
+            'title' => 'Kyravia – Official Website | Premium Herbal Shampoo Brand Pakistan',
+            'description' => 'Official Kyravia website. Kyravia is a premium herbal shampoo brand from Pakistan (Pakistan ke baalon ki pehchaan). Shop Kyravia shampoo 400 ml for Rs 300 with COD.',
+            'keywords' => 'Kyravia, Kyravia shampoo, Kyravia official, Kyravia brand, herbal shampoo Pakistan, Kyravia Pakistan',
         ],
         'product' => [
             'title' => 'Kyravia Herbal Shampoo 400ml – Price in Pakistan Rs 300',

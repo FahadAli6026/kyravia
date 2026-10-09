@@ -34,6 +34,15 @@ if ($uri === '/robots.txt') {
     return true;
 }
 
+if ($uri === '/llms.txt') {
+    $llms = __DIR__ . '/llms.txt';
+    if (is_file($llms)) {
+        header('Content-Type: text/plain; charset=UTF-8');
+        readfile($llms);
+        return true;
+    }
+}
+
 // Map /process/order -> process/order.php
 $phpFile = __DIR__ . $uri . '.php';
 if (is_file($phpFile)) {

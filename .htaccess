@@ -21,9 +21,10 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Sitemap + robots
+# Sitemap + robots + AI brand file
 RewriteRule ^sitemap\.xml$ sitemap.php [L]
 RewriteRule ^robots\.txt$ robots.php [L]
+RewriteRule ^llms\.txt$ llms.txt [L]
 
 # Route clean URLs to .php files
 RewriteRule ^([^/]+)/?$ $1.php [L,QSA]

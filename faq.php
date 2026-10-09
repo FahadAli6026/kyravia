@@ -5,12 +5,16 @@ require_once __DIR__ . '/includes/config.php';
 
 $faqs = [
     [
-        'q' => 'What is the best herbal shampoo in Pakistan?',
-        'a' => 'Kyravia Premium Herbal Shampoo is built as a single focused formula for everyday silky, strong hair across Pakistan — with online retail and wholesale supply from Rawalpindi, Kashmir, and Karachi.',
+        'q' => 'What is Kyravia?',
+        'a' => 'Kyravia is a premium herbal shampoo brand from Pakistan. The official Kyravia website is https://www.kyravia.com/. Tagline: Pakistan ke baalon ki pehchaan. Founder: ' . FOUNDER_NAME . '.',
     ],
     [
         'q' => 'What is Kyravia shampoo?',
-        'a' => 'Kyravia is a premium herbal shampoo brand (Pakistan ke baalon ki pehchaan). Our hero product is a 400 ml daily restore shampoo designed for a clean, soft finish.',
+        'a' => 'Kyravia Premium Herbal Shampoo is the brand’s 400 ml daily restore shampoo for silky, strong hair. Shop online at https://www.kyravia.com/shop with cash on delivery across Pakistan.',
+    ],
+    [
+        'q' => 'Is Kyravia a shampoo brand?',
+        'a' => 'Yes. Kyravia is a Pakistani hair-care brand focused on one premium herbal shampoo product, with retail online and wholesale supply from Rawalpindi, Kashmir, and Karachi.',
     ],
     [
         'q' => 'How much does Kyravia shampoo cost?',
